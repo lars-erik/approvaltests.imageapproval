@@ -67,5 +67,10 @@ The current difference algorithm is a CIE76 color comparison with a
 
 A tolerance for the ratio of pixels that have noticable difference may be set.
 
-## Ideas
+## Things to do
 
+- Validate and/or rewrite the state mechanism (silly, presumably non working attempt at thread safe state keeping, tho stack might be useful)
+- Other similarity mechanisms than CIE76
+- Figure out why/how environmentally aware reporters work. CI build server runs other default reporter.
+- Remove NUnit dependency from core and follow test library compatibility from ApprovalTests.
+- Figure out how to render Oswald 1:1 on CI server and discard this project. 😆
