@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <DebugType>full</DebugType>
+        <RootNamespace>ApprovalTestContrib.ImageApproval.Tests</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="Comparison Images\ApprovalTests.Rocks.FontDiff.png" />
+        <None Remove="Comparison Images\ApprovalTests.Rocks.RenderingDiff.png" />
+        <None Remove="Comparison Images\ApprovalTestsRocks.Nudged.png" />
+        <None Remove="Comparison Images\ApprovalTestsRocks.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Comparison Images\ApprovalTests.Rocks.FontDiff.png" />
+        <EmbeddedResource Include="Comparison Images\ApprovalTests.Rocks.RenderingDiff.png" />
+        <EmbeddedResource Include="Comparison Images\ApprovalTestsRocks.Nudged.png" />
+        <EmbeddedResource Include="Comparison Images\ApprovalTestsRocks.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="nunit" Version="3.12.0" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+        <PackageReference Include="ApprovalTests" Version="5.4.2" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+        <PackageReference Include="NUnit" Version="3.12.0" />
+        <PackageReference Include="SixLabors.ImageSharp" Version="1.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ApprovalTests.ImageApproval\ApprovalTests.ImageApproval.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Approvals\Comparing_Images.Stores_Color_Diff_In_State.approved.png">
+        <ParentFile>$([System.String]::Copy('%(FileName)').Split('.')[0])</ParentFile>
+        <ParentExtension>$(ProjectExt.Replace('proj', ''))</ParentExtension>
+        <DependentUpon>%(ParentFile)%(ParentExtension)</DependentUpon>
+      </None>
+      <None Update="Approvals\Comparing_Images.Disapproves_Unequal_Images.approved.png">
+        <ParentFile>$([System.String]::Copy('%(FileName)').Split('.')[0])</ParentFile>
+        <ParentExtension>$(ProjectExt.Replace('proj', ''))</ParentExtension>
+        <DependentUpon>%(ParentFile)%(ParentExtension)</DependentUpon>
+      </None>
+    </ItemGroup>
+
+</Project>

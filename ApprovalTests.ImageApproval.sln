@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.ImageApproval.Tests", "ApprovalTests.ImageApproval.Tests\ApprovalTests.ImageApproval.Tests.csproj", "{A90C280C-62E3-4265-AFBA-B90A56B96871}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.ImageApproval", "ApprovalTests.ImageApproval\ApprovalTests.ImageApproval.csproj", "{77473A32-8159-4708-B252-399EE9322A25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A90C280C-62E3-4265-AFBA-B90A56B96871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A90C280C-62E3-4265-AFBA-B90A56B96871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A90C280C-62E3-4265-AFBA-B90A56B96871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A90C280C-62E3-4265-AFBA-B90A56B96871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77473A32-8159-4708-B252-399EE9322A25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77473A32-8159-4708-B252-399EE9322A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77473A32-8159-4708-B252-399EE9322A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77473A32-8159-4708-B252-399EE9322A25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64D82895-969A-4F5A-92D9-C97C187BD7CA}
+	EndGlobalSection
+EndGlobal
