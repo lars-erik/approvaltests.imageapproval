@@ -18,11 +18,6 @@ namespace ApprovalTestContrib.ImageApproval.Tests
     [TestFixture]
     public class Comparing_Images
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void Approves_Equal_Images()
         {
