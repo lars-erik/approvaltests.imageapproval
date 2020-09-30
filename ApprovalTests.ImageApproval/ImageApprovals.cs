@@ -69,6 +69,9 @@ namespace ApprovalTests.ImageApproval
         {
             private ImageComparer comparer;
 
+            public bool Blur { get; set; } = false;
+            public string OutputPath { get; set; } = "TestOutput";
+
             public bool CreateColorDiff { get; set; } = true;
             public bool CreateCie76Diff { get; set; } = true;
             public DiffStats Statistics { get; internal set; }
@@ -94,21 +97,21 @@ namespace ApprovalTests.ImageApproval
                 createComparer();
 
                 Statistics = comparer.CompareImages();
+            }
 
-                if (Current.CreateColorDiff)
-                {
-                    ColorDiff = comparer.BuildDiff();
-                }
+            public Image<Rgba32> BuildCIE76Diff()
+            {
+                return comparer.BuildCIE76Diff(100);
+            }
 
-                if (Current.CreateCie76Diff)
-                {
-                    Cie76Diff = comparer.BuildCIE76Diff(100);
-                }
+            public Image<Rgba32> BuildColorDiff()
+            {
+                return comparer.BuildDiff();
             }
 
             private void CreateComparerByPath(string approvedPath, string receivedPath, double ratioTolerance)
             {
-                if (false) // TODO: Blur setting
+                if (Blur) // TODO: Blur setting
                 {
                     comparer = new ImageComparer(approvedPath, receivedPath, ratioTolerance, JustNoticableDifference, x => { x.BoxBlur(2); });
                 }
@@ -120,7 +123,7 @@ namespace ApprovalTests.ImageApproval
 
             private void CreateComparerByBytes(byte[] approvedBytes, byte[] receivedBytes, double ratioTolerance)
             {
-                if (false) // TODO: Blur setting
+                if (Blur) // TODO: Blur setting
                 {
                     comparer = new ImageComparer(approvedBytes, receivedBytes, ratioTolerance, JustNoticableDifference, x => { x.BoxBlur(2); });
                 }
