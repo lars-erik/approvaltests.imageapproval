@@ -35,17 +35,4 @@
         <ProjectReference Include="..\ApprovalTests.ImageApproval\ApprovalTests.ImageApproval.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="Approvals\Comparing_Images.Stores_Color_Diff_In_State.approved.png">
-        <ParentFile>$([System.String]::Copy('%(FileName)').Split('.')[0])</ParentFile>
-        <ParentExtension>$(ProjectExt.Replace('proj', ''))</ParentExtension>
-        <DependentUpon>%(ParentFile)%(ParentExtension)</DependentUpon>
-      </None>
-      <None Update="Approvals\Comparing_Images.Disapproves_Unequal_Images.approved.png">
-        <ParentFile>$([System.String]::Copy('%(FileName)').Split('.')[0])</ParentFile>
-        <ParentExtension>$(ProjectExt.Replace('proj', ''))</ParentExtension>
-        <DependentUpon>%(ParentFile)%(ParentExtension)</DependentUpon>
-      </None>
-    </ItemGroup>
-
 </Project>
